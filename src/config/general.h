@@ -26,7 +26,7 @@ FILE_LICENCE ( GPL2_OR_LATER_OR_UBDL );
  * initialisation vector, thus rendering the banner almost invisible
  * to the user.
  */
-#define BANNER_TIMEOUT		20
+#define BANNER_TIMEOUT		100
 #define ROM_BANNER_TIMEOUT	( 2 * BANNER_TIMEOUT )
 
 /*
@@ -35,6 +35,7 @@ FILE_LICENCE ( GPL2_OR_LATER_OR_UBDL );
  */
 
 #define	NET_PROTO_IPV4		/* IPv4 protocol */
+#undef NET_PROTO_IPV6
 //#define NET_PROTO_IPV6	/* IPv6 protocol */
 #undef	NET_PROTO_FCOE		/* Fibre Channel over Ethernet protocol */
 #define	NET_PROTO_STP		/* Spanning Tree protocol */
@@ -106,20 +107,20 @@ FILE_LICENCE ( GPL2_OR_LATER_OR_UBDL );
  *
  */
 //#define	IMAGE_NBI		/* NBI image support */
-//#define	IMAGE_ELF		/* ELF image support */
-//#define	IMAGE_MULTIBOOT		/* MultiBoot image support */
-//#define	IMAGE_PXE		/* PXE image support */
-//#define	IMAGE_SCRIPT		/* iPXE script image support */
-//#define	IMAGE_BZIMAGE		/* Linux bzImage image support */
+// #define	IMAGE_ELF		/* ELF image support */
+// #define	IMAGE_MULTIBOOT		/* MultiBoot image support */
+// #define	IMAGE_PXE		/* PXE image support */
+#define	IMAGE_SCRIPT		/* iPXE script image support */
+// #define	IMAGE_BZIMAGE		/* Linux bzImage image support */
 //#define	IMAGE_COMBOOT		/* SYSLINUX COMBOOT image support */
-//#define	IMAGE_EFI		/* EFI image support */
+#define	IMAGE_EFI		/* EFI image support */
 //#define	IMAGE_SDI		/* SDI image support */
 //#define	IMAGE_PNM		/* PNM image support */
 #define	IMAGE_PNG		/* PNG image support */
 #define	IMAGE_DER		/* DER image support */
 #define	IMAGE_PEM		/* PEM image support */
-//#define	IMAGE_ZLIB		/* ZLIB image support */
-//#define	IMAGE_GZIP		/* GZIP image support */
+#define	IMAGE_ZLIB		/* ZLIB image support */
+#define	IMAGE_GZIP		/* GZIP image support */
 
 /*
  * Command-line commands to include
@@ -140,25 +141,25 @@ FILE_LICENCE ( GPL2_OR_LATER_OR_UBDL );
 #define LOGIN_CMD		/* Login command */
 #define SYNC_CMD		/* Sync command */
 #define SHELL_CMD		/* Shell command */
-//#define NSLOOKUP_CMD		/* DNS resolving command */
-//#define TIME_CMD		/* Time commands */
-//#define DIGEST_CMD		/* Image crypto digest commands */
-//#define LOTEST_CMD		/* Loopback testing commands */
-//#define VLAN_CMD		/* VLAN commands */
-//#define PXE_CMD		/* PXE commands */
-//#define REBOOT_CMD		/* Reboot command */
-//#define POWEROFF_CMD		/* Power off command */
-//#define IMAGE_TRUST_CMD	/* Image trust management commands */
-//#define PCI_CMD		/* PCI commands */
-//#define PARAM_CMD		/* Request parameter commands */
-//#define NEIGHBOUR_CMD		/* Neighbour management commands */
-//#define PING_CMD		/* Ping command */
-//#define CONSOLE_CMD		/* Console command */
-//#define IPSTAT_CMD		/* IP statistics commands */
-//#define PROFSTAT_CMD		/* Profiling commands */
-//#define NTP_CMD		/* NTP commands */
-//#define CERT_CMD		/* Certificate management commands */
-//#define IMAGE_MEM_CMD		/* Read memory command */
+#define NSLOOKUP_CMD		/* DNS resolving command */
+#define TIME_CMD		/* Time commands */
+#define DIGEST_CMD		/* Image crypto digest commands */
+#define LOTEST_CMD		/* Loopback testing commands */
+#define VLAN_CMD		/* VLAN commands */
+// #define PXE_CMD		/* PXE commands */
+#define REBOOT_CMD		/* Reboot command */
+#define POWEROFF_CMD		/* Power off command */
+#define IMAGE_TRUST_CMD	/* Image trust management commands */
+#define PCI_CMD		/* PCI commands */
+#define PARAM_CMD		/* Request parameter commands */
+#define NEIGHBOUR_CMD		/* Neighbour management commands */
+#define PING_CMD		/* Ping command */
+#define CONSOLE_CMD		/* Console command */
+#define IPSTAT_CMD		/* IP statistics commands */
+#define PROFSTAT_CMD		/* Profiling commands */
+#define NTP_CMD		/* NTP commands */
+#define CERT_CMD		/* Certificate management commands */
+#define IMAGE_MEM_CMD		/* Read memory command */
 #define IMAGE_ARCHIVE_CMD	/* Archive image management commands */
 #define SHIM_CMD		/* EFI shim command (or dummy command) */
 
@@ -173,14 +174,14 @@ FILE_LICENCE ( GPL2_OR_LATER_OR_UBDL );
  * Virtual network devices
  *
  */
-#define VNIC_IPOIB		/* Infiniband IPoIB virtual NICs */
+// #define VNIC_IPOIB		/* Infiniband IPoIB virtual NICs */
 //#define VNIC_XSIGO		/* Infiniband Xsigo virtual NICs */
 
 /*
  * Error message tables to include
  *
  */
-#undef	ERRMSG_80211		/* All 802.11 error descriptions (~3.3kb) */
+// #undef	ERRMSG_80211		/* All 802.11 error descriptions (~3.3kb) */
 
 /*
  * Obscure configuration options
@@ -195,13 +196,13 @@ FILE_LICENCE ( GPL2_OR_LATER_OR_UBDL );
 				 * "make bin/rtl8139.dsk bs" */
 #undef	BUILD_ID		/* Include a custom build ID string,
 				 * e.g "test-foo" */
-#undef	NULL_TRAP		/* Attempt to catch NULL function calls */
+// #undef	NULL_TRAP		/* Attempt to catch NULL function calls */
 #undef	GDBSERIAL		/* Remote GDB debugging over serial */
-#undef	GDBUDP			/* Remote GDB debugging over UDP
-				 * (both may be set) */
+// #undef	GDBUDP			/* Remote GDB debugging over UDP */
+				 /* (both may be set) */
 //#define EFI_DOWNGRADE_UX	/* Downgrade UEFI user experience */
-#define	TIVOLI_VMM_WORKAROUND	/* Work around the Tivoli VMM's garbling of SSE
-				 * registers when iPXE traps to it due to
+// #define	TIVOLI_VMM_WORKAROUND	/* Work around the Tivoli VMM's garbling of SSE */
+				 /* registers when iPXE traps to it due to
 				 * privileged instructions */
 
 #include <config/named.h>

@@ -18,7 +18,7 @@ FILE_LICENCE ( GPL2_OR_LATER );
 /* Keep settings from a previous user of the serial port (e.g. lilo or
  * LinuxBIOS), ignoring COMSPEED, COMDATA, COMPARITY and COMSTOP.
  */
-#undef	COMPRESERVE
+// #undef	COMPRESERVE
 
 #ifndef COMPRESERVE
 #define	COMSPEED	115200		/* Baud rate */

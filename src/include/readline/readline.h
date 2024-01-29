@@ -25,7 +25,7 @@ struct readline_history_entry {
  *
  * Must be one less than a power of two.
  */
-#define READLINE_HISTORY_MAX_DEPTH ( ( 1 << 3 ) - 1 )
+#define READLINE_HISTORY_MAX_DEPTH ( ( 1 << 8 ) - 1 )
 
 /** A readline history buffer */
 struct readline_history {
